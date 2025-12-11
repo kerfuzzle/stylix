@@ -3,9 +3,11 @@ mkTarget {
   config =
     { image }:
     {
-      services.hyprpaper.settings = {
-        preload = [ "${image}" ];
-        wallpaper = [ ",${image}" ];
-      };
+      services.hyprpaper.settings.wallpaper = [
+        {
+          monitor = "";
+          path = "${image}";
+        }
+      ];
     };
 }
